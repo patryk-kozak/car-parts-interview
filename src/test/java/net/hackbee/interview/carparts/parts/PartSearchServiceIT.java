@@ -3,15 +3,10 @@ package net.hackbee.interview.carparts.parts;
 import net.hackbee.interview.carparts.BrandFixture;
 import net.hackbee.interview.carparts.ModelFixture;
 import net.hackbee.interview.carparts.PartFixture;
-import net.hackbee.interview.carparts.PartNotFoundException;
 import net.hackbee.interview.carparts.parts.model.Part;
-import net.hackbee.interview.carparts.parts.model.PartAvailability;
 import net.hackbee.interview.carparts.parts.model.PartMapperImpl;
-import net.hackbee.interview.carparts.persistence.PartRepository;
 import net.hackbee.interview.carparts.persistence.entity.BrandEntity;
 import net.hackbee.interview.carparts.persistence.entity.ModelEntity;
-import net.hackbee.interview.carparts.persistence.entity.PartEntity;
-import net.hackbee.interview.carparts.warehouse.FakeWarehouseAPI;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +26,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Import({PartSearchService.class, PartMapperImpl.class})
 @ActiveProfiles("test")
 public class PartSearchServiceIT {
-    
+
     @Autowired
     private TestEntityManager testEntityManager;
 
@@ -44,7 +39,7 @@ public class PartSearchServiceIT {
         ModelEntity modelEntity = testEntityManager.persist(ModelFixture.partlessM8Entity(brandEntity));
         testEntityManager.persist(PartFixture.diskBrakes(modelEntity));
         testEntityManager.persist(PartFixture.steeringWheel(modelEntity));
-        
+
         List<Part> parts = subject.findByBrandAndModel("BMW", "M8");
 
         assertThat(parts).usingFieldByFieldElementComparator().containsExactlyInAnyOrder(
@@ -52,7 +47,7 @@ public class PartSearchServiceIT {
                 PartFixture.steeringWheelModel()
         );
     }
-    
+
     @Test
     public void findByBrandAndModelAndDescription() {
         BrandEntity brandEntity = testEntityManager.persist(BrandFixture.entityBMW());
@@ -66,5 +61,5 @@ public class PartSearchServiceIT {
                 PartFixture.steeringWheelModel()
         );
     }
-    
+
 }

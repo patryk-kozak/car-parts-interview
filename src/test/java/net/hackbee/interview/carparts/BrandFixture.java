@@ -2,7 +2,6 @@ package net.hackbee.interview.carparts;
 
 import net.hackbee.interview.carparts.brands.model.BrandProfile;
 import net.hackbee.interview.carparts.persistence.entity.BrandEntity;
-import net.hackbee.interview.carparts.persistence.entity.ModelEntity;
 
 import java.util.Collections;
 

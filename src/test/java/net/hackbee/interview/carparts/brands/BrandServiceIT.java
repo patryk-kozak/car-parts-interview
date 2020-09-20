@@ -4,12 +4,8 @@ import net.hackbee.interview.carparts.BrandFixture;
 import net.hackbee.interview.carparts.ModelFixture;
 import net.hackbee.interview.carparts.PartFixture;
 import net.hackbee.interview.carparts.brands.model.BrandProfile;
-import net.hackbee.interview.carparts.brands.model.ModelPartMapper;
 import net.hackbee.interview.carparts.brands.model.ModelPartMapperImpl;
-import net.hackbee.interview.carparts.persistence.ModelRepository;
-import net.hackbee.interview.carparts.persistence.PartRepository;
 import net.hackbee.interview.carparts.persistence.entity.BrandEntity;
-import net.hackbee.interview.carparts.persistence.entity.ModelEntity;
 import net.hackbee.interview.carparts.persistence.entity.PartEntity;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -30,7 +26,7 @@ public class BrandServiceIT {
 
     @Autowired
     private TestEntityManager testEntityManager;
-    
+
     @Autowired
     private BrandService subject;
 

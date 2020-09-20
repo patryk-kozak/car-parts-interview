@@ -22,11 +22,11 @@ public class SalesAPI {
     @Transactional
     @DeleteMapping("/part/{partId}")
     public ResponseEntity<HttpStatus> removePartSales(@PathVariable Long partId) {
-        if(this.salesService.cleanByPart(partId)) {
+        if (this.salesService.cleanByPart(partId)) {
             return ResponseEntity.ok().build();
         } else {
             return ResponseEntity.noContent().build();
         }
     }
-    
+
 }

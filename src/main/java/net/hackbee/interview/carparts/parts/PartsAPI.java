@@ -18,7 +18,7 @@ public class PartsAPI {
         this.partsSearchService = partsSearchService;
         this.partService = partService;
     }
-    
+
     @PutMapping("{id}")
     public Part modify(@PathVariable Long id, @RequestBody Part partDto) throws PartNotFoundException {
         return this.partService.update(id, partDto);

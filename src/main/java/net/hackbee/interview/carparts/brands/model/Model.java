@@ -3,7 +3,7 @@ package net.hackbee.interview.carparts.brands.model;
 import java.util.List;
 
 public class Model {
-    
+
     private final String name;
     private List<ModelPart> parts;
 

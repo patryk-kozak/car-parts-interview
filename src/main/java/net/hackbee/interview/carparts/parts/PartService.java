@@ -10,8 +10,6 @@ import net.hackbee.interview.carparts.warehouse.PartStock;
 import net.hackbee.interview.carparts.warehouse.WarehouseAPI;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
-
 @Service
 class PartService {
 

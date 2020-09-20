@@ -33,7 +33,7 @@ public class ModelFixture {
         m8.setParts(Collections.singleton(partEntity));
         return m8;
     }
-    
+
     public static ModelEntity partlessM8Entity(BrandEntity brandEntity) {
         ModelEntity m8 = new ModelEntity();
         m8.setName("M8");

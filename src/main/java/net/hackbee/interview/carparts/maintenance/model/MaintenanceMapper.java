@@ -6,9 +6,9 @@ import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface MaintenanceMapper {
-    
+
     Maintenance entityToMaintenance(MaintenanceEntity entity);
-    
+
     @Mapping(target = "partId", source = "part.id")
     PartMaintenance entityToPartMaintenance(MaintenanceEntity entity);
 }

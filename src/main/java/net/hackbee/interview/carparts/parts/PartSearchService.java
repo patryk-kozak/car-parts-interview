@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 @Service
 class PartSearchService {
-    
+
     private final PartRepository partRepository;
     private final PartMapper partMapper;
 
@@ -28,7 +28,7 @@ class PartSearchService {
     List<Part> findByBrandAndModelAndDescription(String brand, String model, String partDescription) {
         return partRepository.findByBrandAndModel(brand, model)
                 .stream()
-                .filter(p->p.getDescription().contains(partDescription))
+                .filter(p -> p.getDescription().contains(partDescription))
                 .map(this.partMapper::entityToPart)
                 .collect(Collectors.toList());
     }

@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class PartFixture {
-    
+
     public static PartEntity diskBrakes() {
         PartEntity entity = new PartEntity();
         entity.setName("Disk brakes");
@@ -17,7 +17,7 @@ public class PartFixture {
         entity.setPrice(BigDecimal.valueOf(120L));
         return entity;
     }
-    
+
     public static PartEntity diskBrakes(ModelEntity model) {
         PartEntity entity = new PartEntity();
         entity.setName("Disk brakes");
@@ -35,7 +35,7 @@ public class PartFixture {
         entity.setModel(model);
         return entity;
     }
-    
+
     public static Part diskBrakesModel() {
         Part part = new Part();
         part.setName("Disk brakes");
@@ -59,9 +59,9 @@ public class PartFixture {
         part.setPrice(BigDecimal.valueOf(120L));
         return part;
     }
-    
+
     public static PartAvailability partAvailable() {
-        return PartAvailability.available(100, LocalDate.of(2020, 9 ,10));
+        return PartAvailability.available(100, LocalDate.of(2020, 9, 10));
     }
-    
+
 }

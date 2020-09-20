@@ -19,7 +19,7 @@ public class SaleArgumentEntity {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "part_id", referencedColumnName = "id")
     private PartEntity part;
-    
+
     private Integer discountPercentage = 0;
     private Boolean fastDelivery = false;
     private Boolean easyInstall = false;
@@ -28,28 +28,28 @@ public class SaleArgumentEntity {
         return part;
     }
 
-    public Integer getDiscountPercentage() {
-        return discountPercentage;
-    }
-
-    public Boolean getFastDelivery() {
-        return fastDelivery;
-    }
-
-    public Boolean getEasyInstall() {
-        return easyInstall;
-    }
-
     public void setPart(PartEntity part) {
         this.part = part;
+    }
+
+    public Integer getDiscountPercentage() {
+        return discountPercentage;
     }
 
     public void setDiscountPercentage(Integer discountPercentage) {
         this.discountPercentage = discountPercentage;
     }
 
+    public Boolean getFastDelivery() {
+        return fastDelivery;
+    }
+
     public void setFastDelivery(Boolean fastDelivery) {
         this.fastDelivery = fastDelivery;
+    }
+
+    public Boolean getEasyInstall() {
+        return easyInstall;
     }
 
     public void setEasyInstall(Boolean easyInstall) {

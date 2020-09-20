@@ -19,13 +19,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(controllers = BrandsAPI.class)
 class BrandsAPIIT {
 
+    private final ObjectMapper objectMapper = new ObjectMapper();
     @Autowired
     private MockMvc mockMvc;
-
     @MockBean
     private BrandService brandServiceMock;
-
-    private final ObjectMapper objectMapper = new ObjectMapper();
 
     @Test
     void brandProfileReturn() throws Exception {

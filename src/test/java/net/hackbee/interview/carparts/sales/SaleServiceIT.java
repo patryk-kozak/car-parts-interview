@@ -23,7 +23,7 @@ public class SaleServiceIT {
 
     @Autowired
     private SaleArgumentRepository saleArgumentRepository;
-    
+
     @Autowired
     private TestEntityManager testEntityManager;
 

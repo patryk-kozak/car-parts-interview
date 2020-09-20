@@ -14,7 +14,7 @@ public class ModelEntity {
     // JPA also need to load it back to context after each insert.
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     @Column(nullable = false)
     private String name;
     @Column(nullable = false)
@@ -33,36 +33,36 @@ public class ModelEntity {
         return name;
     }
 
-    public LocalDate getProducedFrom() {
-        return producedFrom;
-    }
-
-    public LocalDate getProducedSince() {
-        return producedSince;
-    }
-
-    public BrandEntity getBrand() {
-        return brand;
-    }
-    
-    public Set<PartEntity> getParts() {
-        return parts;
-    }
-
     public void setName(String name) {
         this.name = name;
+    }
+
+    public LocalDate getProducedFrom() {
+        return producedFrom;
     }
 
     public void setProducedFrom(LocalDate producedFrom) {
         this.producedFrom = producedFrom;
     }
 
+    public LocalDate getProducedSince() {
+        return producedSince;
+    }
+
     public void setProducedSince(LocalDate producedSince) {
         this.producedSince = producedSince;
     }
 
+    public BrandEntity getBrand() {
+        return brand;
+    }
+
     public void setBrand(BrandEntity brand) {
         this.brand = brand;
+    }
+
+    public Set<PartEntity> getParts() {
+        return parts;
     }
 
     public void setParts(Set<PartEntity> parts) {

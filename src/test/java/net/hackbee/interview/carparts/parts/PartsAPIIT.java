@@ -15,8 +15,8 @@ import java.util.Collections;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.BDDMockito.given;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @ActiveProfiles("test")
@@ -85,7 +85,7 @@ class PartsAPIIT {
                 .willReturn(Collections.singletonList(PartFixture.diskBrakesModel()));
 
         String contentAsString = mockMvc.perform(get("/api/parts/BMW/M8")
-        .param("partDescription", "M"))
+                .param("partDescription", "M"))
                 .andExpect(status().isOk())
                 .andReturn().getResponse().getContentAsString();
 

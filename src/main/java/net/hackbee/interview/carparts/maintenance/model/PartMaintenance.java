@@ -3,7 +3,7 @@ package net.hackbee.interview.carparts.maintenance.model;
 import java.time.LocalDate;
 
 public class PartMaintenance {
-    
+
     private String name;
     private Long partId;
     private LocalDate beginDate;

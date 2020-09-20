@@ -1,4 +1,4 @@
-package net.hackbee.interview.carparts;
+package net.hackbee.interview.carparts.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

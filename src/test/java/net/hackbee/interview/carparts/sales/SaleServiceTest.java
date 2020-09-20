@@ -8,7 +8,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.given;
 
 @ExtendWith(MockitoExtension.class)
@@ -16,17 +15,17 @@ class SaleServiceTest {
 
     @Mock
     private SaleArgumentRepository saleArgumentRepositoryMock;
-    
+
     @InjectMocks
     private SaleService subject;
-    
+
     @Test
     void trueWhenMoreThenZeroResults() {
         given(saleArgumentRepositoryMock.deleteByPart_Id(1L)).willReturn(1);
-        
+
         assertThat(subject.cleanByPart(1L)).isTrue();
     }
-    
+
     @Test
     void falseWhenZeroResults() {
         given(saleArgumentRepositoryMock.deleteByPart_Id(1L)).willReturn(0);

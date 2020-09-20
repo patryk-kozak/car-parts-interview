@@ -13,7 +13,7 @@ public class BrandEntity {
     // JPA also need to load it back to context after each insert.
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     private String name;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "brand", cascade = CascadeType.ALL)
@@ -23,11 +23,11 @@ public class BrandEntity {
         return models;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public void setModels(Set<ModelEntity> models) {
         this.models = models;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

@@ -5,7 +5,7 @@ import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface ModelPartMapper {
-    
+
     ModelPart entityToModelPart(PartEntity entity);
-    
+
 }

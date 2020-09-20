@@ -14,7 +14,7 @@ public class MaintenanceFixture {
         maintenance.setName("Regular Maintenance");
         return maintenance;
     }
-    
+
     public static MaintenanceEntity entity(PartEntity partEntity, LocalDate date) {
         MaintenanceEntity maintenanceEntity = new MaintenanceEntity();
         maintenanceEntity.setPart(partEntity);
@@ -23,7 +23,7 @@ public class MaintenanceFixture {
         maintenanceEntity.setName("Maintenance at " + date.toString());
         return maintenanceEntity;
     }
-    
+
     public static Maintenance ofDate(LocalDate date) {
         Maintenance maintenance = new Maintenance();
         maintenance.setBeginDate(date);

@@ -40,16 +40,16 @@ public class PartServiceIT {
 
         assertThat(partAvailability.getAvailable()).isTrue();
     }
-    
+
     @Test
     public void update() throws PartNotFoundException {
         testEntityManager.persist(PartFixture.diskBrakes());
 
         Part part = subject.update(1L, PartFixture.updatedDiskBrakesModel());
-        
+
         assertThat(part).isEqualToComparingFieldByField(PartFixture.updatedDiskBrakesModel());
         assertThat(partRepository.getOne(1L).getName()).isEqualTo("Updated disk brakes");
         assertThat(partRepository.getOne(1L).getDescription()).isEqualTo("Awesome updated brakes");
     }
-    
+
 }

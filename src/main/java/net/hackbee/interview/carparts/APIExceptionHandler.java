@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ControllerAdvice
 public class APIExceptionHandler {
-    
+
     // Set on response and internally in object.
     // Internally probably not needed, useful for GUI clients.
     @ResponseStatus(code = HttpStatus.BAD_REQUEST)
