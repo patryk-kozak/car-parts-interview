@@ -9,25 +9,25 @@ public class PartAvailability {
     private final Boolean available;
     private final LocalDate shipmentDate;
 
-    private PartAvailability(boolean available, LocalDate shipmentDate) {
+    private PartAvailability(Boolean available, LocalDate shipmentDate) {
         this.available = available;
         this.shipmentDate = shipmentDate;
     }
 
-    public static PartAvailability available(int amount, LocalDate shipmentDate) {
-        return new PartAvailability(amount > 0, shipmentDate);
+    public static PartAvailability available(LocalDate shipmentDate) {
+        return new PartAvailability(Boolean.TRUE, shipmentDate);
     }
 
     public static PartAvailability unavailable() {
-        return new PartAvailability(false, null);
+        return new PartAvailability(Boolean.FALSE, null);
     }
 
     public Boolean getAvailable() {
-        return available;
+        return this.available;
     }
 
     public LocalDate getShipmentDate() {
-        return shipmentDate;
+        return this.shipmentDate;
     }
 
     @Override

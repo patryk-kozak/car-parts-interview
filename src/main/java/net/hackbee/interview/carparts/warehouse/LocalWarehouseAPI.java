@@ -1,6 +1,7 @@
 package net.hackbee.interview.carparts.warehouse;
 
 import net.hackbee.interview.carparts.PartNotFoundException;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 @Component

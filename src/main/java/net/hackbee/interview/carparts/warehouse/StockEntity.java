@@ -9,16 +9,17 @@ import java.time.LocalDate;
 @Table(name = "STOCKS")
 class StockEntity {
 
-    private final int amount = 0;
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     // NOTE: Removed PartEntity reference here.
     // That way packages don't depend on each other and can easily scale.
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "part_id")
     private PartEntity part;
     private LocalDate shipmentDate;
+    private int amount = 0;
 
     public int getAmount() {
         return amount;

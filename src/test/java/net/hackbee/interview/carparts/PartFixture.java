@@ -61,7 +61,7 @@ public class PartFixture {
     }
 
     public static PartAvailability partAvailable() {
-        return PartAvailability.available(100, LocalDate.of(2020, 9, 10));
+        return PartAvailability.available(LocalDate.of(2020, 9, 10));
     }
 
 }

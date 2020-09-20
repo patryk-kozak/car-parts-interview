@@ -9,8 +9,6 @@ import java.util.Set;
 @Table(name = "PARTS")
 public class PartEntity {
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "part")
-    private final Set<MaintenanceEntity> maintenances = new HashSet<>();
     @Id
     // NOTE: Don't use it in prod. It disables DB batch insert optimization.
     // JPA also need to load it back to context after each insert.
@@ -19,11 +17,16 @@ public class PartEntity {
     private String name;
     private String description;
     private BigDecimal price;
+    
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "part")
     private SaleArgumentEntity saleArgument;
+
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "model_id")
     private ModelEntity model;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "part")
+    private Set<MaintenanceEntity> maintenances = new HashSet<>();
 
     public Long getId() {
         return id;

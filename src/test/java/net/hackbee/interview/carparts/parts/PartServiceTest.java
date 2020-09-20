@@ -48,6 +48,17 @@ class PartServiceTest {
 
     @Test
     void partUnavailable() throws PartNotFoundException {
+        given(warehouseApiMock.checkStock(1L))
+                .willReturn(new PartStock(1L, 0, LocalDate.now()));
+
+        PartAvailability partAvailability = subject.available(1L);
+
+        assertThat(partAvailability.getAvailable()).isFalse();
+        assertThat(partAvailability.getShipmentDate()).isNull();
+    }
+
+    @Test
+    void partUnavailableException() throws PartNotFoundException {
         given(warehouseApiMock.checkStock(1L)).willThrow(new PartNotFoundException(1L));
 
         PartAvailability partAvailability = subject.available(1L);

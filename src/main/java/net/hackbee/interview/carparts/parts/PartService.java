@@ -26,7 +26,11 @@ class PartService {
     public PartAvailability available(Long id) {
         try {
             PartStock stock = this.warehouseApi.checkStock(id);
-            return PartAvailability.available(stock.getAmount(), stock.getShipmentDate());
+            if (stock.getAmount() > 0) {
+                return PartAvailability.available(stock.getShipmentDate());
+            } else {
+                return PartAvailability.unavailable();
+            }
         } catch (PartNotFoundException e) {
             return PartAvailability.unavailable();
         }
