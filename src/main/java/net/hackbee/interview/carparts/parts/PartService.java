@@ -23,7 +23,7 @@ class PartService {
         this.partMapper = partMapper;
     }
 
-    PartAvailability available(Long id) {
+    public PartAvailability available(Long id) {
         try {
             PartStock stock = this.warehouseApi.checkStock(id);
             return PartAvailability.available(stock.getAmount(), stock.getShipmentDate());
@@ -32,7 +32,7 @@ class PartService {
         }
     }
 
-    Part update(Long id, Part partDto) throws PartNotFoundException {
+    public Part update(Long id, Part partDto) throws PartNotFoundException {
         PartEntity partEntity = this.partRepository.findById(id).orElseThrow(() -> new PartNotFoundException(id));
         partEntity.setName(partDto.getName());
         partEntity.setDescription(partDto.getDescription());

@@ -1,5 +1,7 @@
 package net.hackbee.interview.carparts.brands.model;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import java.util.List;
 
 public class Model {
@@ -21,5 +23,13 @@ public class Model {
 
     public void setParts(List<ModelPart> parts) {
         this.parts = parts;
+    }
+
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this)
+                .append("name", name)
+                .append("parts", parts)
+                .toString();
     }
 }

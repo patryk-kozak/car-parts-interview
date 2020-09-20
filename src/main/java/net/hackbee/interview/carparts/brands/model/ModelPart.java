@@ -1,5 +1,7 @@
 package net.hackbee.interview.carparts.brands.model;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import java.math.BigDecimal;
 
 public class ModelPart {
@@ -30,5 +32,14 @@ public class ModelPart {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this)
+                .append("name", name)
+                .append("description", description)
+                .append("price", price)
+                .toString();
     }
 }

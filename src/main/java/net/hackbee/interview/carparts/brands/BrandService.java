@@ -21,7 +21,7 @@ class BrandService {
         this.modelPartMapper = modelPartMapper;
     }
 
-    BrandProfile profile(String brand) {
+    public BrandProfile profile(String brand) {
         BrandProfile profile = new BrandProfile(brand);
         List<ModelEntity> models = modelRepository.findByBrand_name(brand);
         for (ModelEntity model : models) {

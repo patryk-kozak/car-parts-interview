@@ -14,13 +14,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class MaintenanceService {
+class MaintenanceService {
 
     private final MaintenanceRepository maintenanceRepository;
     private final MaintenanceMapper maintenanceMapper;
     private final PartRepository partRepository;
 
-    public MaintenanceService(MaintenanceRepository maintenanceRepository, MaintenanceMapper maintenanceMapper, PartRepository partRepository) {
+    MaintenanceService(MaintenanceRepository maintenanceRepository, MaintenanceMapper maintenanceMapper, PartRepository partRepository) {
         this.maintenanceRepository = maintenanceRepository;
         this.maintenanceMapper = maintenanceMapper;
         this.partRepository = partRepository;

@@ -19,13 +19,13 @@ class PartSearchService {
         this.partMapper = partMapper;
     }
 
-    List<Part> findByBrandAndModel(String brand, String model) {
+    public List<Part> findByBrandAndModel(String brand, String model) {
         return partRepository.findByBrandAndModel(brand, model).stream()
                 .map(this.partMapper::entityToPart)
                 .collect(Collectors.toList());
     }
 
-    List<Part> findByBrandAndModelAndDescription(String brand, String model, String partDescription) {
+    public List<Part> findByBrandAndModelAndDescription(String brand, String model, String partDescription) {
         return partRepository.findByBrandAndModel(brand, model)
                 .stream()
                 .filter(p -> p.getDescription().contains(partDescription))

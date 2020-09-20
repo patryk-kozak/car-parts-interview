@@ -23,4 +23,12 @@ public class BrandProfile {
     public String getName() {
         return name;
     }
+
+    @Override
+    public String toString() {
+        return new org.apache.commons.lang3.builder.ToStringBuilder(this)
+                .append("name", name)
+                .append("models", models)
+                .toString();
+    }
 }

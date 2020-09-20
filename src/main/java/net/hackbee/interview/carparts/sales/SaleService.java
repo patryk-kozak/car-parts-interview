@@ -12,7 +12,7 @@ class SaleService {
         this.saleArgumentRepository = saleArgumentRepository;
     }
 
-    boolean cleanByPart(Long partId) {
+    public boolean cleanByPart(Long partId) {
         return saleArgumentRepository.deleteByPart_Id(partId) > 0;
     }
 }

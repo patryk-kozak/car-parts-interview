@@ -1,5 +1,7 @@
 package net.hackbee.interview.carparts.maintenance.model;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import java.time.LocalDate;
 
 public class Maintenance {
@@ -30,5 +32,14 @@ public class Maintenance {
 
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
+    }
+
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this)
+                .append("name", name)
+                .append("beginDate", beginDate)
+                .append("endDate", endDate)
+                .toString();
     }
 }

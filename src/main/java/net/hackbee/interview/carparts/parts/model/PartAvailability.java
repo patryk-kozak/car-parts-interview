@@ -1,5 +1,7 @@
 package net.hackbee.interview.carparts.parts.model;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import java.time.LocalDate;
 
 public class PartAvailability {
@@ -16,11 +18,9 @@ public class PartAvailability {
         return new PartAvailability(amount > 0, shipmentDate);
     }
 
-
     public static PartAvailability unavailable() {
         return new PartAvailability(false, null);
     }
-
 
     public Boolean getAvailable() {
         return available;
@@ -28,5 +28,13 @@ public class PartAvailability {
 
     public LocalDate getShipmentDate() {
         return shipmentDate;
+    }
+
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this)
+                .append("available", available)
+                .append("shipmentDate", shipmentDate)
+                .toString();
     }
 }
