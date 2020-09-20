@@ -7,19 +7,16 @@ import net.hackbee.interview.carparts.parts.model.PartAvailability;
 import net.hackbee.interview.carparts.parts.model.PartMapperImpl;
 import net.hackbee.interview.carparts.persistence.PartRepository;
 import net.hackbee.interview.carparts.warehouse.FakeWarehouseAPI;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 
-@RunWith(SpringRunner.class)
 @DataJpaTest
 @Import({PartService.class, PartMapperImpl.class, FakeWarehouseAPI.class})
 @ActiveProfiles("test")

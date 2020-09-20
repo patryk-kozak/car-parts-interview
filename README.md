@@ -5,4 +5,4 @@ In terminal, go to `docker` folder and run command:
 In result it should run local PostgreSQL on `5432` port.
 
 Then launch application from top folder:
-> ```./mvn spring-boot:run```
+> ```./mvnw spring-boot:run -Dspring-boot.run.profiles=local```

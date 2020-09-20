@@ -9,14 +9,12 @@ import net.hackbee.interview.carparts.maintenance.model.MaintenanceMapperImpl;
 import net.hackbee.interview.carparts.maintenance.model.PartMaintenance;
 import net.hackbee.interview.carparts.persistence.MaintenanceRepository;
 import net.hackbee.interview.carparts.persistence.entity.PartEntity;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -24,7 +22,6 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 
-@RunWith(SpringRunner.class)
 @DataJpaTest
 @Import({MaintenanceService.class, MaintenanceMapperImpl.class})
 @ActiveProfiles("test")
@@ -72,7 +69,8 @@ public class MaintenanceServiceIT {
         PartMaintenance partMaintenance = subject.registerPart(PartMaintenanceFixture.clutchReplace(partEntity.getId()));
 
         // then
-        assertThat(partMaintenance).isEqualToComparingFieldByField(PartMaintenanceFixture.clutchReplace());
+        assertThat(partMaintenance)
+                .isEqualToIgnoringGivenFields(PartMaintenanceFixture.clutchReplace(), "partId");
         assertThat(maintenanceRepository.findAll()).hasSize(1);
     }
 }
